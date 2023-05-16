@@ -5,8 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="CSS/style.css" type="text/css" />
+    <!-- JS -->
+    <script
+    src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+    crossorigin="anonymous"
+  ></script>
+  <script src="js/jQuery/Infinite-Scroller-Plugin-jQuery/infiniteslidev2.js"></script>
     <script src="js/main.js"></script>
+    <!-- style -->
+    <link rel="stylesheet" href="CSS/style.css" type="text/css" />
+
   </head>
   <body>
     <header>
@@ -61,13 +70,13 @@
           <h2>My Skills</h2>
         </div>
       </div>
-        <!-- <div class="tab">
+      <!-- <div class="tab">
       <button class="tablinks active" onclick="openTab(event, 'skill')">Skills</button>
       <button class="tablinks" onclick="openTab(event, 'tech')">Tech</button>
     </div> -->
 
-        <!-- Tab content -->
-        <!-- <div id="skill" class="tabcontent" style="display: block;">
+      <!-- Tab content -->
+      <!-- <div id="skill" class="tabcontent" style="display: block;">
       <span class="skillName">wireframing</span>
       <span class="skillName">usability-testing</span>
       <span class="skillName">Prototyping</span>
@@ -87,60 +96,18 @@
       <p>HTML</p>
     </div> -->
 
-        <div class="tag-list">
-          <div
-            class="loop-slider"
-            style="--duration: 17632ms; --direction: normal"
-          >
-            <div class="inner">
-              <div class="tag"> wireframing</div>
-              <div class="tag"> usability</div>
-              <div class="tag"> usability-testing</div>
-              <div class="tag"> Prototyping</div>
-              <div class="tag"> user-research</div>
-              <div class="tag"> responsive-design</div>
-              <div class="tag"> Interaction design</div>
-              <div class="tag"> Site mapping</div>
-              <div class="tag"> Micro-interactions</div>
-              <div class="tag"> Information architecture (IA)</div>
-            </div>
-          </div>
-          <div
-            class="loop-slider"
-            style="--duration: 14118ms; --direction: reverse"
-          >
-          <div class="inner">
-            <div class="tag"> wireframing</div>
-            <div class="tag"> usability</div>
-            <div class="tag"> usability-testing</div>
-            <div class="tag"> Prototyping</div>
-            <div class="tag"> user-research</div>
-            <div class="tag"> responsive-design</div>
-            <div class="tag"> Interaction design</div>
-            <div class="tag"> Site mapping</div>
-            <div class="tag"> Micro-interactions</div>
-            <div class="tag"> Information architecture (IA)</div>
-          </div>
-          </div>
-          <div
-            class="loop-slider"
-            style="--duration: 10547ms; --direction: normal"
-          >
-          <div class="inner" style="margin-top: 2rem;">
-            <img src="assets/images/adobe-xd.png" alt="">
-            <img src="assets/images/bootstrap.png" alt="">
-            <img src="assets/images/css3.png" alt="">
-            <img src="assets/images/figma.png" alt="">
-            <img src="assets/images/html5.png" alt="">
-            <img src="assets/images/js.png" alt="">
-            <img src="assets/images/jquery.png" alt="">
-            <img src="assets/images/Miro.png" alt="">
-            <img src="assets/images/git.png" alt="">
-          </div>
-          </div>
-          <div class="fade"></div>
-        </div>
-     
+      <div class="tag-list">
+        <ul class="tech-slider">
+          <li><img src="assets/images/adobe-xd.png" alt="" /></li>
+          <li><img src="assets/images/bootstrap.png" alt="" /></li>
+          <li><img src="assets/images/css3.png" alt="" /></li>
+          <li><img src="assets/images/figma.png" alt="" /></li>
+          <li><img src="assets/images/html5.png" alt="" /></li>
+          <li><img src="assets/images/jquery.png" alt="" /></li>
+          <li><img src="assets/images/js.png" alt="" /></li>
+          <li><img src="assets/images/Miro.png" alt="" /></li>
+        </ul>
+      </div>
     </section>
 
     <footer>
@@ -151,5 +118,16 @@
         <li class="inline-block">contact</li>
       </ul>
     </footer>
+
+    <script type="text/javascript">
+      $(function(){
+        $('.tech-slider').infiniteslide({
+          speed: 40,
+          direction: 'right',
+          responsive: true
+
+        });
+      });
+    </script>
   </body>
 </html>
