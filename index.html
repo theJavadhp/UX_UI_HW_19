@@ -7,15 +7,18 @@
     <title>Document</title>
     <!-- JS -->
     <script
-    src="https://code.jquery.com/jquery-3.7.0.min.js"
-    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-    crossorigin="anonymous"
-  ></script>
-  <script src="js/jQuery/Infinite-Scroller-Plugin-jQuery/infiniteslidev2.js"></script>
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+    <script>
+      ScrollReveal({ duration: 2000 });
+    </script>
+    <script src="js/jQuery/Infinite-Scroller-Plugin-jQuery/infiniteslidev2.js"></script>
     <script src="js/main.js"></script>
     <!-- style -->
     <link rel="stylesheet" href="CSS/style.css" type="text/css" />
-
   </head>
   <body>
     <header>
@@ -31,6 +34,21 @@
             <li class="inline-block">contact</li>
           </ul>
         </nav>
+        <div class="header__hamburger">
+          <button class="hamburger-button" button-name="Menu">
+            <!-- <img src="assets/images/menu.svg" width="" alt="" /> -->
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div class="menuLayer">
+          <ul>
+            <li><a href="#">Menu 1</a></li>
+            <li><a href="#">Menu 2</a></li>
+            <li><a href="#">Menu 3</a></li>
+          </ul>
+        </div>
       </div>
     </header>
     <section id="hero">
@@ -51,11 +69,11 @@
           <h2>My Projects</h2>
         </div>
         <div class="projects-container">
-          <div class="project p1">p1</div>
-          <div class="project p2">p2</div>
-          <div class="project p3">p3</div>
-          <div class="project p4">p4</div>
-          <div class="project p5">p5</div>
+          <div class="project p1"></div>
+          <div class="project p2"></div>
+          <div class="project p3"></div>
+          <div class="project p4"></div>
+          <div class="project p5"></div>
         </div>
       </div>
     </section>
@@ -69,32 +87,49 @@
           />
           <h2>My Skills</h2>
         </div>
-      </div>
-      <!-- <div class="tab">
-      <button class="tablinks active" onclick="openTab(event, 'skill')">Skills</button>
-      <button class="tablinks" onclick="openTab(event, 'tech')">Tech</button>
-    </div> -->
+     
 
-      <!-- Tab content -->
-      <!-- <div id="skill" class="tabcontent" style="display: block;">
-      <span class="skillName">wireframing</span>
-      <span class="skillName">usability-testing</span>
-      <span class="skillName">Prototyping</span>
-      <span class="skillName">user-research</span>
-      <span class="skillName">responsive-design</span>
-      <span class="skillName">Atomic Design</span>
-      <span class="skillName">Interaction design</span>
-      <span class="skillName">Gamification</span>
-      <span class="skillName">A/B testing</span>
-      <span class="skillName">Site mapping</span>
-      <span class="skillName">Micro-interactions</span>
-      <span class="skillName">Information architecture (IA)</span>
-    </div>
-    
-    <div id="tech" class="tabcontent">
-      <h3>Tech</h3>
-      <p>HTML</p>
-    </div> -->
+        <ul class="skill-scroll1">
+          <li class="skillName">wireframing</li>
+          <li class="skillName">usability-testing</li>
+          <li class="skillName">user-research</li>
+          <li class="skillName">Prototyping</li>
+          <li class="skillName">Atomic Design</li>
+          <li class="skillName">Interaction design</li>
+          <li class="skillName">Gamification</li>
+          <li class="skillName">A/B testing</li>
+          <li class="skillName">Site mapping</li>
+          <li class="skillName">Micro-interactions</li>
+          <li class="skillName">Information architecture (IA)</li>
+        </ul>
+
+        <ul class="skill-scroll2">
+          <li class="skillName">wireframing</li>
+          <li class="skillName">usability-testing</li>
+          <li class="skillName">user-research</li>
+          <li class="skillName">Prototyping</li>
+          <li class="skillName">Atomic Design</li>
+          <li class="skillName">Interaction design</li>
+          <li class="skillName">Gamification</li>
+          <li class="skillName">A/B testing</li>
+          <li class="skillName">Site mapping</li>
+          <li class="skillName">Micro-interactions</li>
+          <li class="skillName">Information architecture (IA)</li>
+        </ul>
+
+        <ul class="skill-scroll3">
+          <li class="skillName">wireframing</li>
+          <li class="skillName">usability-testing</li>
+          <li class="skillName">user-research</li>
+          <li class="skillName">Prototyping</li>
+          <li class="skillName">Atomic Design</li>
+          <li class="skillName">Interaction design</li>
+          <li class="skillName">Gamification</li>
+          <li class="skillName">A/B testing</li>
+          <li class="skillName">Site mapping</li>
+          <li class="skillName">Micro-interactions</li>
+          <li class="skillName">Information architecture (IA)</li>
+        </ul>
 
       <div class="tag-list">
         <ul class="tech-slider">
@@ -108,6 +143,7 @@
           <li><img src="assets/images/Miro.png" alt="" /></li>
         </ul>
       </div>
+    </div>
     </section>
 
     <footer>
@@ -120,14 +156,19 @@
     </footer>
 
     <script type="text/javascript">
-      $(function(){
-        $('.tech-slider').infiniteslide({
-          speed: 40,
-          direction: 'right',
-          responsive: true
-
-        });
+      $(".header__hamburger").click(function () {
+        $(".header__hamburger").toggleClass("is-active");
+        $(".menuLayer").toggleClass("is-active");
       });
+
+      $(".hamburger-button").click(function () {
+        $(this).addClass("active");
+      });
+    </script>
+    <script>
+      ScrollReveal().reveal(".project", { delay: 1000 });
+      ScrollReveal().reveal("#hero", { delay: 500 });
+      
     </script>
   </body>
 </html>
