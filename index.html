@@ -26,12 +26,10 @@
         <div class="logo inline-block">
           <img src="assets/images/JSquare.png" alt="logo" />
         </div>
-        <nav class="inline-block">
-          <ul>
-            <li class="inline-block">Projects</li>
-            <li class="inline-block">Skills</li>
-            <li class="inline-block">Contact Me</li>
-          </ul>
+        <nav>
+          <a class="inline-block" href="#projects">Projects</a>
+          <a class="inline-block" href="#skills">Skills</a>
+          <a class="inline-block" href="#contactMe">Contact Me</a>
         </nav>
         <div class="header__hamburger">
           <button class="hamburger-button" button-name="Menu">
@@ -43,9 +41,9 @@
         </div>
         <div class="menuLayer">
           <ul>
-            <li><a href="#">Menu 1</a></li>
-            <li><a href="#">Menu 2</a></li>
-            <li><a href="#">Menu 3</a></li>
+            <li><a class="inline-block" href="#projects">Projects</a></li>
+            <li><a class="inline-block" href="#skills">Skills</a></li>
+            <li><a class="inline-block" href="#contactMe">Contact Me</a></li>
           </ul>
         </div>
       </div>
@@ -53,10 +51,21 @@
     <section id="hero">
       <div class="container">
         <p>Hi, I'm Javad</p>
-        <h1>a 
-          <img class="UX" src="assets/images/UX.png" alt="">
-          Designer</h1>
-        <button class="primary">Download My Resume</button>
+        <h1>
+          a
+          <img class="UX" src="assets/images/UX.png" alt="" />
+          Designer
+        </h1>
+        <div class="CTAs">
+        <button class="btn primary">
+          <img src="assets/images/download.svg" alt="">
+          <span>Download My Resume</span>
+        </button>
+        <a class="btn linkedin">
+          <img src="assets/images/linkedin.svg" alt="">
+          <!-- <span>My linkedin</span> -->
+        </a>
+      </div>
       </div>
     </section>
 
@@ -178,8 +187,27 @@
     <footer>
       <p>ALL © RESERVED BY Javadhp</p>
     </footer>
+    <!---->
+    <!-- JQUERY -->
+    <script>
+      // ScrollReveal
+      ScrollReveal().reveal("#hero", { delay: 100 });
+      ScrollReveal().reveal(".title", { delay: 400 });
+      ScrollReveal().reveal(".project", { delay: 700 });
 
-    <script type="text/javascript">
+      // header
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          var scroll = $(window).scrollTop();
+          if (scroll > 100) {
+            $("header").addClass("scrolled");
+          } else {
+            $("header").removeClass("scrolled");
+          }
+        });
+      });
+
+      // menu
       $(".header__hamburger").click(function () {
         $(".header__hamburger").toggleClass("is-active");
         $(".menuLayer").toggleClass("is-active");
@@ -188,25 +216,6 @@
       $(".hamburger-button").click(function () {
         $(this).addClass("active");
       });
-    </script>
-    <script>
-      ScrollReveal().reveal("#hero", { delay: 100 });
-      ScrollReveal().reveal(".title", { delay: 400 });
-      ScrollReveal().reveal(".project", { delay: 700 });
-    </script>
-    <script>
-      $(document).ready(function(){
-  $(window).scroll(function(){
-  	var scroll = $(window).scrollTop();
-	  if (scroll > 100) {
-	    $("header").addClass("scrolled");
-	  }
-
-	  else{
-		  $("header").removeClass("scrolled");  	
-	  }
-  })
-})
     </script>
   </body>
 </html>
