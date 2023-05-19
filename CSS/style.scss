@@ -94,6 +94,11 @@ section {
   }
 }
 
+.UX {
+  width: 140px;
+  margin-bottom: -1px;
+}
+
 button {
   display: flex;
   align-items: center;
@@ -421,7 +426,9 @@ font-weight: 200;
       }
     }
   }
-
+  .UX {
+    width: 50px;
+  }
   button {
     margin: 1rem auto;
     padding: 8px 16px;

@@ -92,6 +92,11 @@ section {
   color: #0c9cd7;
 }
 
+.UX {
+  width: 140px;
+  margin-bottom: -1px;
+}
+
 button {
   display: flex;
   align-items: center;
@@ -391,6 +396,9 @@ footer p {
   }
   #hero h1 span {
     color: #0c9cd7;
+  }
+  .UX {
+    width: 50px;
   }
   button {
     margin: 1rem auto;
