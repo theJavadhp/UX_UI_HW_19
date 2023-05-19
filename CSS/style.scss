@@ -8,6 +8,7 @@
 
 body {
   background-color: #f5f5f5;
+  margin: 0;
 }
 
 .container {
@@ -17,9 +18,19 @@ body {
 header {
   display: flex;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  padding: .25rem 1rem;
+  transition: box-shadow .2s ease-in-out;
+  background-color: #f5f5f5;
+  z-index: 10;
   .container {
     display: flex;
     justify-content: space-between;
+  }
+  &.scrolled {
+    box-shadow: rgb(0 0 0 / 15%) 0px 6px 16px 0px;
+    
   }
 }
 
@@ -276,6 +287,7 @@ font-weight: 200;
   }
 
   header {
+    padding: .75rem .25rem;
     nav {
       display: none;
     }
@@ -315,6 +327,14 @@ font-weight: 200;
       &:nth-child(3) {
         transform: translateX(5px) rotate(-45deg);
       }
+    }
+  }
+
+  .logo {
+    height: 32px;
+    img {
+      height: 32px;
+      width: 32px;
     }
   }
 

@@ -24,7 +24,7 @@
     <header>
       <div class="container">
         <div class="logo inline-block">
-          <img src="/assets/images/JSquare.png" alt="logo" />
+          <img src="assets/images/JSquare.png" alt="logo" />
         </div>
         <nav class="inline-block">
           <ul>
@@ -192,6 +192,20 @@
       ScrollReveal().reveal("#hero", { delay: 100 });
       ScrollReveal().reveal(".title", { delay: 400 });
       ScrollReveal().reveal(".project", { delay: 700 });
+    </script>
+    <script>
+      $(document).ready(function(){
+  $(window).scroll(function(){
+  	var scroll = $(window).scrollTop();
+	  if (scroll > 100) {
+	    $("header").addClass("scrolled");
+	  }
+
+	  else{
+		  $("header").removeClass("scrolled");  	
+	  }
+  })
+})
     </script>
   </body>
 </html>
